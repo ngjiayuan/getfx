@@ -36,8 +36,8 @@ export default function Index() {
             </Form.Select>
           </Form.Group>
           {rate && <div className="flex justify-between"><span>Raw FX rate:</span><span ><b>{parseFloat(rate).toFixed(5)}</b></span></div>}
-          {rate && <div className="flex justify-between"><span>Deposit FX rate: +40bp</span><span ><b>{(parseFloat(rate) + 0.004).toFixed(5)}</b></span></div>}
-          {rate && <div className="flex justify-between"><span>Withdrawal FX rate: -40bp</span><span ><b>{(parseFloat(rate) - 0.004).toFixed(5)}</b></span></div>}
+          {rate && <div className="flex justify-between"><span>FX rate + 40bp:</span><span ><b>{(parseFloat(rate) * (1 + 0.004)).toFixed(5)}</b></span></div>}
+          {rate && <div className="flex justify-between"><span>FX rate - 40bp:</span><span ><b>{(parseFloat(rate) * (1 - 0.004)).toFixed(5)}</b></span></div>}
           <br />
           <Button onClick={() => getFx(fromCurrency, toCurrency)}>
             Get Rate
