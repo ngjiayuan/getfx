@@ -21,7 +21,7 @@ export default function Index() {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>From Currency</Form.Label>
-            <Form.Select value={fromCurrency} onChange={(e) => setFromCurrency(e.currentTarget.value)}>
+            <Form.Select disabled value={fromCurrency} onChange={(e) => setFromCurrency(e.currentTarget.value)}>
               {currencies.map((item, idx) => (
                 <option key={idx}>{item}</option>
               ))}
@@ -29,7 +29,7 @@ export default function Index() {
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>To Currency</Form.Label>
-            <Form.Select value={toCurrency} onChange={(e) => setToCurrency(e.currentTarget.value)}>
+            <Form.Select disabled value={toCurrency} onChange={(e) => setToCurrency(e.currentTarget.value)}>
               {currencies.map((item, idx) => (
                 <option key={idx}>{item}</option>
               ))}
