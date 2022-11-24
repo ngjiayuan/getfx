@@ -58,7 +58,7 @@ export default function Index() {
               {redeemRate && <div className="flex justify-between"><span>Raw FX rate:</span><span ><b>{parseFloat(redeemRate).toFixed(5)}</b></span></div>}
               {redeemRate && <div className="flex justify-between"><span>Redeem rate - 40bp:</span><span ><b>{(parseFloat(redeemRate) * (1 - 0.004)).toFixed(5)}</b></span></div>}
               <br />
-              <Button onClick={() => getFx("USD", "CAD")}>
+              <Button onClick={() => getFx(fromCurrency, toCurrency)}>
                 Get Rate
               </Button>
             </Form>
@@ -94,7 +94,7 @@ export default function Index() {
               {purchaseRate && <div className="flex justify-between"><span>Raw FX rate:</span><span ><b>{parseFloat(purchaseRate).toFixed(5)}</b></span></div>}
               {purchaseRate && <div className="flex justify-between"><span>Purchase rate + 40bp:</span><span ><b>{(parseFloat(purchaseRate) * (1 + 0.004)).toFixed(5)}</b></span></div>}
               <br />
-              <Button onClick={() => getFx("CAD", "USD")}>
+              <Button onClick={() => getFx(fromCurrency, toCurrency)}>
                 Get Rate
               </Button>
             </Form>
