@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 
 export default function Index() {
-  const [fromCurrency, setFromCurrency] = useState("CAD");
-  const [toCurrency, setToCurrency] = useState("USD");
+  const [fromCurrency, setFromCurrency] = useState("USD");
+  const [toCurrency, setToCurrency] = useState("CAD");
   const [rate, setRate] = useState("")
 
   const currencies = ["USD", "CAD"]
@@ -36,8 +36,8 @@ export default function Index() {
             </Form.Select>
           </Form.Group>
           {rate && <div className="flex justify-between"><span>Raw FX rate:</span><span ><b>{parseFloat(rate).toFixed(5)}</b></span></div>}
-          {rate && <div className="flex justify-between"><span>FX rate + 40bp:</span><span ><b>{(parseFloat(rate) * (1 + 0.004)).toFixed(5)}</b></span></div>}
-          {rate && <div className="flex justify-between"><span>FX rate - 40bp:</span><span ><b>{(parseFloat(rate) * (1 - 0.004)).toFixed(5)}</b></span></div>}
+          {rate && <div className="flex justify-between"><span>Purchase rate + 40bp:</span><span ><b>{(parseFloat(rate) * (1 + 0.004)).toFixed(5)}</b></span></div>}
+          {rate && <div className="flex justify-between"><span>Redeem rate - 40bp:</span><span ><b>{(parseFloat(rate) * (1 - 0.004)).toFixed(5)}</b></span></div>}
           <br />
           <Button onClick={() => getFx(fromCurrency, toCurrency)}>
             Get Rate
